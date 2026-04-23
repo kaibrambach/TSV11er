@@ -19,6 +19,21 @@ table{width:100%;border-collapse:collapse} th,td{padding:8px 10px;border-bottom:
 footer{padding:14px 18px;color:var(--muted);font-size:13px}@media (max-width:1200px){.wrap{grid-template-columns:1fr}.qual,.setup-grid{grid-template-columns:1fr}}
 </style>
 </head>
+<script>
+let speed = 0.5;
+
+function autoScroll() {
+    window.scrollBy(0, speed);
+
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        window.scrollTo(0, 0);
+    }
+
+    requestAnimationFrame(autoScroll);
+}
+
+autoScroll();
+</script>
 <body>
 <header>
   <h1>LIVE - Elfmeterturnier</h1>
